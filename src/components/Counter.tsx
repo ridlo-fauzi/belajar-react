@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Calculator = () => {
+const Counter = () => {
   const [input, setInput] = useState(0);
   return (
     <div
@@ -38,4 +38,4 @@ const Calculator = () => {
   );
 };
 
-export default Calculator;
+export default Counter;
