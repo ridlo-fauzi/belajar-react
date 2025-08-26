@@ -68,13 +68,18 @@ const Todos = () => {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  border: "1px solid black",
                   padding: "10px",
+                  borderRadius: "5px",
+                  background: todo.completed ? "lightgreen" : "lightgrey",
                 }}
               >
                 <span
                   style={{
                     textDecoration: todo.completed ? "line-through" : "none",
+                    color: "black",
+                    fontSize: "15px",
+                    marginRight: "10px",
+                    marginLeft: "10px",
                   }}
                 >
                   {todo.title}
