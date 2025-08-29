@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
+import Button from "./Button";
 
 interface Todo {
   id: number;
@@ -22,7 +25,6 @@ const Todos = () => {
 
     setTodos((prevTodos) => {
       const updated = [...prevTodos, newTodo];
-      //   console.log(updated);
       return updated;
     });
     console.log(todos);
@@ -98,20 +100,14 @@ const Todos = () => {
                       )
                     }
                   />
-                  <button
-                    style={{
-                      marginLeft: "10px",
-                      background: "red",
-                      color: "white",
-                      border: "none",
-                      padding: "5px 10px",
-                    }}
+                  <Button
+                    bgcolor="red"
                     onClick={() =>
                       setTodos(todos.filter((t) => t.id !== todo.id))
                     }
                   >
-                    Delete
-                  </button>
+                    <FontAwesomeIcon icon={faTrash} />
+                  </Button>
                 </div>
               </div>
             ))}

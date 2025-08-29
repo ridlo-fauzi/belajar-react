@@ -1,17 +1,25 @@
-function Button2({ children }: { children: string }) {
+interface ButtonProps {
+  bgcolor: string;
+  type?: "button" | "submit" | "reset";
+  onClick?: () => void;
+  children: React.ReactNode;
+}
+
+function Button({ bgcolor, type = "button", onClick, children }: ButtonProps) {
   return (
     <button
       style={{
-        background: "red",
+        background: bgcolor,
         color: "white",
         border: "none",
         padding: "5px 20px",
       }}
-      type="submit"
+      type={type}
+      onClick={onClick}
     >
       {children}
     </button>
   );
 }
 
-export default Button2;
+export default Button;
